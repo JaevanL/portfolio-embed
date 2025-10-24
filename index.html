@@ -3,24 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full Width Header</title>
+  <title>Full Width Rounded Header</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
+      background-color: #12121b; /* optional page background */
     }
 
     .header {
-      width: 100%;                /* full browser width */
-      height: 200px;              /* fixed height */
-      background-color: #1e1e2f;  /* dark professional background */
+      width: 100%;                 /* full width */
+      height: 200px;               /* fixed height */
+      background-color: #1e1e2f;   /* dark professional */
       color: #ffffff;
       display: flex;
       flex-direction: column;
-      justify-content: center;    /* vertical centering */
-      align-items: center;        /* horizontal centering */
-      border-radius: 0;           /* no rounded corners if hugging edges */
+      justify-content: center;     /* vertical centering */
+      align-items: center;         /* horizontal centering */
+      border-radius: 24px;         /* rounded corners */
+      box-sizing: border-box;
+      overflow: hidden;            /* ensures content fits inside rounded edges */
     }
 
     .header-buttons {
