@@ -1,48 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio-embed-jaevan</title>
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        background-color: black;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaevan Portfolio</title>
+  <style>
+    /* ==== VARIABLES ==== */
+    :root {
+      --bg-color: #111;              /* dark background */
+      --text-color: #eee;            /* main text */
+      --primary-color: #ff5252;      /* accent / buttons */
+      --secondary-color: #888;       /* secondary text */
+      --header-padding: 40px;
+      --button-radius: 8px;
+      --card-bg: #222;               /* project card background */
+      --card-radius: 12px;
+    }
 
-      .header {
-        display: flex;
+    /* ==== GLOBAL STYLES ==== */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: "Poppins", sans-serif;
+    }
+
+    a { text-decoration: none; color: var(--primary-color); }
+
+    /* ==== HEADER SECTION ==== */
+    .header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--header-padding);
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .header-button-container {
+      margin-top: 20px;
+    }
+
+    .header-button-container button {
+      margin: 5px;
+      padding: 10px 20px;
+      border-radius: var(--button-radius);
+      border: none;
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .header-button-container button:hover {
+      transform: scale(1.05);
+    }
+
+    /* ==== SECTION STYLES ==== */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+    }
+
+    /* ==== PROJECT CARDS ==== */
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border-radius: var(--card-radius);
+      padding: 20px;
+      width: 300px;
+      box-sizing: border-box;
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .project-card h3 {
+      margin: 0 0 10px 0;
+    }
+
+    .project-card p {
+      color: var(--secondary-color);
+    }
+
+    /* ==== ABOUT SECTION ==== */
+    .about p {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: var(--secondary-color);
+    }
+
+    /* ==== CONTACT SECTION ==== */
+    .contact {
+      text-align: center;
+    }
+
+    .contact button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      border-radius: var(--button-radius);
+      border: none;
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .contact button:hover {
+      transform: scale(1.05);
+    }
+
+    /* ==== RESPONSIVE ==== */
+    @media (max-width: 768px) {
+      .projects-grid {
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        height: 100vh;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 40px;
-        box-sizing: border-box;
-        text-align: center;
-        background-color: red;
       }
+    }
+  </style>
+</head>
+<body>
 
-      .header-button-container {
-        margin-top: 20px;
-      }
+  <!-- ==== HEADER ==== -->
+  <div class="header">
+    <h1>Hi, I'm Jaevan</h1>
+    <div class="header-button-container">
+      <button>Achievements</button>
+      <button>About Me</button>
+    </div>
+  </div>
 
-      .header-button-container button {
-        margin: 5px;
-        padding: 10px 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="header">
-      <h1>hi im jaevan</h1>
-      <div class="header-button-container">
-        <button>achievements :p</button>
-        <button>about me XD</button>
+  <!-- ==== PROJECTS SECTION ==== -->
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://picsum.photos/300/200" alt="Project 1">
+        <h3>Project One</h3>
+        <p>A dark horror game made in Godot about surviving in an abandoned ward.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://picsum.photos/301/200" alt="Project 2">
+        <h3>Project Two</h3>
+        <p>A time-travel puzzle adventure game with pixel art graphics.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://picsum.photos/302/200" alt="Project 3">
+        <h3>Project Three</h3>
+        <p>An experimental cozy boba tea alchemy simulator with magical effects.</p>
       </div>
     </div>
-  </body>
+  </section>
+
+  <!-- ==== ABOUT SECTION ==== -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I'm Jaevan, a game developer and designer passionate about creating unique experiences 
+      in horror, puzzle, and cozy games. I enjoy exploring new mechanics, experimenting with 
+      art styles, and pushing the boundaries of interactive storytelling.
+    </p>
+  </section>
+
+  <!-- ==== CONTACT SECTION ==== -->
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>If you'd like to work with me or get in touch, feel free to send a message!</p>
+    <button>Send a Message</button>
+  </section>
+
+</body>
 </html>
