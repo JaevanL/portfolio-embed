@@ -1,35 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fun Dark Header</title>
-  <title>Full Width Header</title>
-<style>
+  <style>
     /* Reset defaults */
-html, body {
-margin: 0;
-padding: 0;
-height: 100%;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
       overflow: hidden; /* no scrolling */
       font-family: Arial, sans-serif;
-}
+      background-color: #12121b; /* optional page background */
+    }
 
-.header {
-      width: 100%;                /* full width */
-      width: 100%;                /* full browser width */
-height: 200px;              /* fixed height */
-background-color: #1e1e2f;  /* dark professional background */
-color: #ffffff;
-display: flex;
-flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border-top-left-radius: 24px;
-      border-top-right-radius: 24px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-      justify-content: center;    /* vertical centering */
-      align-items: center;        /* horizontal centering */
-      border-radius: 0;           /* no rounded corners if hugging edges */
-}
+    /* Header container */
+    .header {
+      width: 90%;                /* leave space for rounded sides */
+      max-width: 1200px;
+      height: 200px;             /* fixed height */
+      background-color: #1e1e2f; /* dark professional background */
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;   /* vertical centering */
+      align-items: center;       /* horizontal centering */
+      padding: 0 40px;
+      border-radius: 40px;       /* rounded sides */
+      margin: 20px auto;         /* center horizontally */
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5); /* subtle depth */
+    }
 
     .header h1 {
       margin: 0;
@@ -39,31 +40,52 @@ flex-direction: column;
     }
 
     /* Header buttons container */
-.header-buttons {
-margin-top: 15px;
-display: flex;
-gap: 15px;
-}
+    .header-buttons {
+      margin-top: 15px;
+      display: flex;
+      gap: 15px;
+    }
 
     /* Header buttons */
-.header-buttons button {
-padding: 10px 20px;
+    .header-buttons button {
+      padding: 10px 20px;
       background-color: #ff6f61; /* fun coral accent */
-      background-color: #ff6f61; /* fun accent */
-color: #ffffff;
-border: none;
-border-radius: 12px;
-cursor: pointer;
-font-size: 14px;
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 14px;
       transition: background 0.3s, transform 0.2s;
-}
+    }
 
-.header-buttons button:hover {
+    .header-buttons button:hover {
       background-color: #ff8470; /* lighter accent on hover */
       transform: translateY(-2px); /* subtle lift */
     }
-    
-      background-color: #ff8470; /* hover effect */
-}
-</style>
+
+    /* Optional: responsive for mobile */
+    @media (max-width: 600px) {
+      .header {
+        height: 180px;
+        padding: 0 20px;
+      }
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      .header-buttons button {
+        padding: 8px 16px;
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
+<body>
+  <div class="header">
+    <h1>Hi, I'm Jaevan</h1>
+    <div class="header-buttons">
+      <button>Achievements</button>
+      <button>About Me</button>
+    </div>
+  </div>
+</body>
+</html>
